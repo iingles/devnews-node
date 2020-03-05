@@ -9,7 +9,7 @@
     "postinstall": "npm -s run generate",
     "seed": "node -r esm prisma/seed",
     "dev": "npx prisma2 studio --experimental",
-    "start": "node -r esm ./src/server"
+    "start": "node -r esm ./src/index"
   },
   "author": "Isaac Ingles",
   "license": "ISC",
