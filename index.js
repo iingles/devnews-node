@@ -14,7 +14,7 @@ const resolvers = {
         postsByUser(root, args, context) {
             return context.prisma
             .user({
-                id: args.userId
+                id: args.userId 
             })
             .posts()
         },
