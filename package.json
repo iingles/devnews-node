@@ -1,0 +1,23 @@
+{
+  "name": "gpa-social",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iingles/gpa-social.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iingles/gpa-social/issues"
+  },
+  "homepage": "https://github.com/iingles/gpa-social#readme",
+  "dependencies": {
+    "prisma-client-lib": "^1.34.10"
+  }
+}
