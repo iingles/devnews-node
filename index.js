@@ -1,9 +1,9 @@
 // Using NPM's esm module so we can use ES6 syntax
 
 import { prisma } from './generated/prisma-client'
-import { graphQLServer } from 'graphql-yoga'
+import { GraphQLServer } from 'graphql-yoga'
 
-const resolovers = {
+const resolvers = {
     Query: {
         publishedPosts(root, args, context) {
             return context.prisma.posts({ where: { published: true }})
@@ -58,3 +58,13 @@ const resolovers = {
         }
     }
 }
+
+const server = new GraphQLServer({
+    typeDefs: './schema.graphql',
+    resolvers,
+    context: {
+        prisma
+    }
+})
+
+server.start( ()=> console.log('Server is up and running on http://localhost:4000') )
