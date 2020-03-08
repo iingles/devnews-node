@@ -1,6 +1,6 @@
-const { ApolloServer } = require('apollo-server')
-const { schema } = require('./schema')
-const { createContext } = require('./context')
+import { ApolloServer } from 'apollo-server'
+import { schema } from './schema'
+import { createContext }from './context'
 
 new ApolloServer({ schema, context: createContext }).listen(
   { port: 4000 },
