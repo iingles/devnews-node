@@ -1,6 +1,11 @@
 {
   "name": "typescript-javascript",
   "scripts": {
+    "createDB": "npx prisma2 migrate save --name 'init' --experimental && npx prisma2 migrate up --experimental",
+    "generate": "npx prisma2 generate",
+    "postinstall": "npm -s run generate",
+    "seed": "node -r esm prisma/seed",
+    "pdev": "npx prisma2 studio --experimental",
     "dev": "nodemon -r esm ./src/server.js",
     "start": "node -r esm ./src/server.js"
   },
