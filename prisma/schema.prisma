@@ -12,11 +12,15 @@ model User {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
   name String
-  email String  @unique
-  dob String
+  surname String
+  gender String
+  region String
   phone String
-  location String
-  bio String
+  birthday String
+  password String
+  email String  @unique
+  photo String
+  bio String  
   posts Post[]
   followers User[] @relation(name: "User")
   following User[] @relation(name: "User")
