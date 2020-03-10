@@ -8,11 +8,10 @@ generator client {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  name String?
-  displayName String?
+  id  String  @default(cuid()) @id
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  name String
   email String  @unique
   dob String
   phone String
@@ -24,7 +23,7 @@ model User {
 }
 
 model Post {
-  id        Int     @id @default(autoincrement())
+  id        Int     @id
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   author    User?

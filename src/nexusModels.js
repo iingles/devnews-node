@@ -4,10 +4,7 @@ const User = objectType({
     name: 'User',
     definition(t) {
         t.model.id()
-        t.model.createdAt()
-        t.model.updatedAt()
         t.model.name()
-        t.model.displayName()
         t.model.email()
         t.model.dob()
         t.model.phone()

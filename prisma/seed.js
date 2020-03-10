@@ -6,10 +6,7 @@ async function createUser() {
   try {
     await prismaClient.user.create({
       data: {        
-        createdAt: '2015-11-22T13:57:31.123Z',
-        updatedAt: '2015-11-22T13:57:31.123Z',
         name: 'John Doe',
-        displayName: 'jdoe',
         email: 'jdoe@example.com',
         dob: '01/01/1990',
         phone: '555-555-5555',

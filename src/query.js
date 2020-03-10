@@ -7,7 +7,7 @@ export const Query = queryType({
             nullable: true,
             args: { id: idArg() },
             resolve: (parent, { id }, ctx) => {
-                return ctx.prisma.user.findOne({
+                return ctx.prisma.user.findOne({                    
                     where: {
                         id,
                     }
@@ -21,7 +21,7 @@ export const Query = queryType({
                 searchString: stringArg({ nullable: true}),
             },
             resolve: (parent, { searchString }, ctx) => {
-                return ctx.prisma.course.findMany({
+                return ctx.prisma.user.findMany({
                     where: {
                         OR: [
                             { name: { contains: searchString }},

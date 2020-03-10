@@ -1,5 +1,6 @@
 import { nexusPrismaPlugin } from 'nexus-prisma'
 import { makeSchema } from 'nexus'
+
 import { Query } from './query'
 import { Models } from './nexusModels'
 
