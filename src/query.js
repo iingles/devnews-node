@@ -23,10 +23,7 @@ export const Query = queryType({
             resolve: (parent, { searchString }, ctx) => {
                 return ctx.prisma.user.findMany({
                     where: {
-                        OR: [
-                            { name: { contains: searchString }},
-                            { description: { contains: searchString }}
-                        ]
+                        name: { contains: searchString }
                     }
                 })
             }
