@@ -2,10 +2,11 @@ import { nexusPrismaPlugin } from 'nexus-prisma'
 import { makeSchema } from 'nexus'
 
 import { Query } from './query'
+import { Mutations } from './mutations'
 import { Models } from './nexusModels'
 
 export const schema = makeSchema({
-  types: [Query, ...Models],
+  types: [Query, Mutations, ...Models],
   plugins: [nexusPrismaPlugin()],
   outputs: {
     schema: __dirname + '/generated/schema.graphql',
