@@ -1,4 +1,4 @@
-import { objectType, queryType, mutationType } from 'nexus'
+import { objectType } from 'nexus'
 
 const User = objectType({
     name: 'User',
