@@ -8,34 +8,32 @@ generator client {
 }
 
 model User {
-  id  String  @default(cuid()) @id
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
-  name String
-  age Int
-  surname String
-  gender String
-  region String
-  phone String
-  birthday String
-  password String
-  email String  @unique
-  photo String
-  bio String  
-  posts Post[]
-  followers User[] @relation(name: "User")
-  following User[] @relation(name: "User")
+  id        String   @default(cuid()) @id
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String?
+  age       Int?
+  surname   String
+  gender    String?
+  region    String?
+  phone     String?
+  birthday  String?
+  password  String?
+  email     String?   @unique
+  photo     String?
+  bio       String?
+  posts     Post[]
+  followers User[]   @relation("User", references: [id])
+  following User[]   @relation("User", references: [id])
 }
 
 model Post {
-  id        Int     @id
-  title String
+  id        Int      @id
+  title     String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  author    User?
+  author    User?    @relation(references: [id])
   content   String?
-  mediaURL String
-  published Boolean @default(false)
-  
+  mediaURL  String?
+  published Boolean  @default(false)
 }
-

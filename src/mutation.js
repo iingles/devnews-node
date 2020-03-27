@@ -7,6 +7,7 @@ import {
 export const Mutation = mutationType({
     name: 'Mutation',
     definition(t) {
+
         t.crud.deleteOneUser()
 
         t.field('createUser', {
@@ -29,7 +30,7 @@ export const Mutation = mutationType({
                 password,
                 email
             }, ctx) => {
-                return ctx.prisma.course.create({
+                return ctx.prisma.user.create({
                     data: {
                         name,
                         surname,
@@ -62,6 +63,44 @@ export const Mutation = mutationType({
                 }),
                 following: stringArg({
                     list: true
+                })
+            },
+            resolve: (parent, {
+                    id,
+                    name,
+                    surname,
+                    gender,
+                    region,
+                    phone,
+                    birthday,
+                    password,
+                    email,
+                    photo,
+                    bio,
+                    posts,
+                    followers,
+                    following
+                },
+                ctx) => {
+                return ctx.prisma.user.update({
+                    where: {
+                        id
+                    },
+                    data: {
+                        name,
+                        surname,
+                        gender,
+                        region,
+                        phone,
+                        birthday,
+                        password,
+                        email,
+                        photo,
+                        bio,
+                        posts,
+                        followers,
+                        following
+                    }
                 })
             }
         })
