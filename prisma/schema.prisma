@@ -12,6 +12,7 @@ model User {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
   name String
+  age Int
   surname String
   gender String
   region String

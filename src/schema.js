@@ -2,7 +2,7 @@ import { nexusPrismaPlugin } from 'nexus-prisma'
 import { makeSchema } from 'nexus'
 
 import { Query } from './query'
-import { Mutation } from './mutations'
+import { Mutation } from './mutation'
 import { Models } from './nexusModels'
 
 export const schema = makeSchema({
