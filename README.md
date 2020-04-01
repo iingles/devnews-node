@@ -56,6 +56,7 @@ query findManyUsers {
 
 <details>
 <summary><strong>Example mutations</strong></summary>
+
 ```graphql
 mutation createOneUser {
     createUser(name: "Johnny", surname: "Doe", email: "jdoe@example.com") {
