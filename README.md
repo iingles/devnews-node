@@ -22,8 +22,9 @@
 
 <details>
 <summary><strong>Example queries</strong></summary>
-<p>
+
 ```graphql
+
 query findSingleUser {
     User(id:'id-string') {
         name
@@ -38,11 +39,14 @@ query findByEmail {
 }
 
 query findManyUsers {
-    name
-    surname
-}```
+    Users {
+        name
+        surname
+    }
+}
+```
 
-</p>
+
 </details>
 
 
@@ -67,7 +71,8 @@ mutation updateUser(id: "id-string", property: "data") {
     name
     surname
     property
-}```
+}
+```
 </details>
 
 
