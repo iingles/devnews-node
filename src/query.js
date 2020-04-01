@@ -15,7 +15,7 @@ export const Query = queryType({
       },
     })
 
-    t.field('User', {
+    t.field('Email', {
       type: 'User',
       nullable: true,
       args: {
