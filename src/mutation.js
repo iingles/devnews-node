@@ -101,7 +101,7 @@ export const Mutation = mutationType({
     t.field('createOnePost', {
       type: 'Post',
       args: {
-        author: stringArg({
+        author: idArg({
           nullable: false,
         }),
         content: stringArg({
