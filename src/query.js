@@ -43,5 +43,47 @@ export const Query = queryType({
         })
       },
     })
+
+    t.field('Post', {
+      type: 'Post',
+      args: {
+        id: idArg()
+      },
+      resolve: (parent, { id }, ctx) => {
+        return ctx.prisma.post.findOne({
+          where: {
+            id,
+          },
+        })
+      },
+    })
+
+    t.field('postsByAuthor', {
+      type: 'Post',
+      args: {
+        searchString: stringArg({ nullable: true })
+      },
+      resolve: (parent, { searchString }, ctx) => {
+        return ctx.prisma.post.findMany({
+          where: {
+            author: { contains: searchString },
+          },
+        })
+      },
+    })
+
+    t.field('postsByContent', {
+      type: 'Post',
+      args: {
+        searchString: stringArg({ nullable: true })
+      },
+      resolve: (parent, { searchString }, ctx) => {
+        return ctx.prisma.post.findMany({
+          where: {
+            content: { contains: searchString },
+          },
+        })
+      },
+    })
   },
 })
