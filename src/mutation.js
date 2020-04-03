@@ -98,6 +98,8 @@ export const Mutation = mutationType({
       },
     })
 
+    t.crud.deleteOnePost()  
+      
     t.field('createOnePost', {
       type: 'Post',
       args: {
@@ -120,6 +122,33 @@ export const Mutation = mutationType({
           },
         })
       },
+    })
+      
+    t.field('updateOnePost', {
+        type: 'Post',
+        args: {
+            id: idArg({
+                nullable: false
+            }),
+            content: stringArg({
+                nullable: false
+            }),
+            author: stringArg(),
+            mediaURL: stringArg(),
+            published: stringArg(),
+        },
+        resolve: (parent, { id, author, content, mediaURL, published }, ctx) => {
+            return ctx.prisma.post.update({
+                where: {
+                    id,
+                },
+                data: {
+                    content,
+                    mediaURL,
+                    published,
+                },
+            })
+        },
     })
   },
 })

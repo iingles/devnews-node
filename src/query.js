@@ -58,7 +58,8 @@ export const Query = queryType({
       },
     })
 
-    t.field('postsByAuthor', {
+
+    t.list.field('Posts', {
       type: 'Post',
       args: {
         searchString: stringArg({ nullable: true })
@@ -71,19 +72,6 @@ export const Query = queryType({
         })
       },
     })
-
-    t.field('postsByContent', {
-      type: 'Post',
-      args: {
-        searchString: stringArg({ nullable: true })
-      },
-      resolve: (parent, { searchString }, ctx) => {
-        return ctx.prisma.post.findMany({
-          where: {
-            content: { contains: searchString },
-          },
-        })
-      },
-    })
+   
   },
 })

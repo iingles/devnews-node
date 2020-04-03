@@ -19,7 +19,7 @@ model User {
   phone     String?
   birthday  String?
   password  String?
-  email     String?   @unique
+  email     String?  @unique
   photo     String?
   bio       String?
   posts     Post[]
@@ -31,8 +31,9 @@ model Post {
   id        String   @default(cuid()) @id
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  author    User?    @relation(references: [id])
+  author    String
   content   String?
   mediaURL  String?
   published Boolean  @default(false)
+  user      User?    @relation(references: [id])
 }

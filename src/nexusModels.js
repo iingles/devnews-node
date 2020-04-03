@@ -26,10 +26,10 @@ const Post = objectType({
         t.model.id()
         t.model.createdAt()
         t.model.updatedAt()
-        t.model.author()
         t.model.content()
         t.model.mediaURL()
         t.model.published()
+        t.model.author()
     }
 })
 
